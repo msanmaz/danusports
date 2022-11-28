@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  @layer components {
+    .topbar-icons{
+      @apply flex flex-row
+    }
+
+    .topbar{
+      @apply fixed top-0 w-full flex items-center flex-row z-[10] justify-evenly
+    }
+    .tabs-trigger{
+      @apply  first:rounded-tl-lg last:rounded-tr-lg  border-gray-300  px-3 py-2.5 focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-[#1da5c2] focus-visible:ring-opacity-75
+    }
+
+    .tabs-list{
+      @apply flex w-full border-b  border-gray-300 rounded-t-lg bg-white
+    }
+
+    .sidebar-icon {
+        @apply relative inline-flex md:!flex mx-[0.5rem] items-center justify-center 
+               h-12 w-12 md:w-16 md:h-16 mt-2 mb-6 md:mx-auto shadow-lg
+               bg-gray-800 text-[#1DA5C0]
+               hover:bg-[#1da5c2] hover:text-white
+               rounded-xl md:rounded-3xl hover:rounded-xl
+               transition-all duration-300 ease-linear
+               cursor-pointer;
+    }
+
+    .sidebar-tooltip {
+      @apply md:absolute hidden w-auto p-2 m-2 min-w-max left-14
+      rounded-md shadow-md
+      text-white bg-gray-900 
+      text-xs font-bold
+      transition-all duration-100 scale-0 origin-left;
+    }
+    .picker-container{
+      @apply w-full
+    }
+    .sidebar-heading{
+      @apply py-12 flex justify-center font-bold text-5xl uppercase text-white
+    }
+    .sidebar-container{
+      @apply fixed md:list-item flex justify-center bottom-0 md:top-0 z-50 md:left-0 shadow-lg p-2 w-full md:w-[5rem] bg-[#161616] md:h-screen
+    }
+    .radial-progress{
+      @apply text-[#1DA5C0] text-sm
+    }
+    .radial-progress-second{
+      @apply text-[#73EC0F] text-sm
+
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.picker-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-template-areas:
+    "a a a a b b b b"
+    "a a a a b b b b"
+    "c c c c c c c c"
+    "c c c c c c c c";
 }
+
+
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../public/assets/BebasNue/BebasNeue\ Regular.otf');
+  font-weight: 400!important;
+  }
+
+
+  .bebas{
+    font-family: 'BebasNeue';
+  }
+
+
+ 
