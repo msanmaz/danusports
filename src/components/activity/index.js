@@ -9,8 +9,6 @@ const Activity = () => {
 <Pickers/>
 <Table/>
 </div>
-
-
 </>
   )
 }

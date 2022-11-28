@@ -17,7 +17,6 @@ const App = () => {
                 <Route path="/Athlete" element={<Athlete/>} />
                 </Route>
             </Routes>
-            
         </BrowserRouter>
 
     )
